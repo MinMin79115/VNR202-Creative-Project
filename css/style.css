@@ -1,5 +1,310 @@
 /********** Template CSS **********/
 
+/* ========== Theme Variables ========== */
+:root {
+  /* Dark Theme (Default) */
+  --theme-primary: #E41779;
+  --theme-secondary: #1A1A1A;
+  --theme-bg: #0D0D0D;
+  --theme-bg-secondary: #1A1A1A;
+  --theme-text: #A0A0A0;
+  --theme-text-light: #FFFFFF;
+  --theme-border: #A0A0A0;
+}
+
+/* Light Theme */
+.light-theme {
+  --theme-primary: #DC143C;
+  --theme-secondary: #FFD700;
+  --theme-bg: #FFFFFF;
+  --theme-bg-secondary: #F5F5F5;
+  --theme-text: #2C2C2C;
+  --theme-text-light: #000000;
+  --theme-border: #DDDDDD;
+}
+
+/* Apply theme colors to body and common elements */
+body {
+  background-color: var(--theme-bg) !important;
+  color: var(--theme-text) !important;
+}
+
+.bg-dark {
+  background-color: var(--theme-bg-secondary) !important;
+}
+
+.bg-secondary {
+  background-color: var(--theme-bg-secondary) !important;
+}
+
+.bg-primary {
+  background-color: var(--theme-primary) !important;
+}
+
+.text-primary {
+  color: var(--theme-primary) !important;
+}
+
+.text-white,
+h1, h2, h3, h4, h5, h6 {
+  color: var(--theme-text-light) !important;
+}
+
+.navbar-dark {
+  background-color: var(--theme-bg-secondary) !important;
+}
+
+.btn-primary {
+  background-color: var(--theme-primary) !important;
+  border-color: var(--theme-primary) !important;
+}
+
+.btn-outline-primary {
+  color: var(--theme-primary) !important;
+  border-color: var(--theme-primary) !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--theme-primary) !important;
+  border-color: var(--theme-primary) !important;
+}
+
+.border-secondary {
+  border-color: var(--theme-border) !important;
+}
+
+/* Fix navbar link colors in light theme */
+.light-theme .navbar .navbar-nav .nav-link {
+  color: #2C2C2C !important;
+}
+
+.light-theme .navbar .navbar-nav .nav-link:hover,
+.light-theme .navbar .navbar-nav .nav-link.active {
+  color: var(--theme-primary) !important;
+}
+
+.light-theme .navbar-brand h2 {
+  color: #000000 !important;
+}
+
+/* Fix hamburger button in light theme */
+.light-theme .navbar-toggler {
+  border-color: var(--theme-primary) !important;
+}
+
+.light-theme .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23DC143C' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Theme toggle button styles */
+#theme-toggle {
+  background-color: transparent;
+  border: 2px solid var(--theme-primary);
+  color: var(--theme-primary);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 15px;
+}
+
+#theme-toggle:hover {
+  background-color: var(--theme-primary);
+  color: var(--theme-bg);
+  transform: rotate(20deg);
+}
+
+#theme-toggle i {
+  font-size: 1.2rem;
+}
+
+/* Apply theme to carousel caption overlay */
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.4) !important;
+}
+
+.light-theme .carousel-caption {
+  background: rgba(255, 255, 255, 0.4) !important;
+}
+
+.light-theme .carousel-caption h1,
+.light-theme .carousel-caption h5,
+.light-theme .carousel-caption p {
+  color: #000000 !important;
+}
+
+/* Apply theme to service items */
+.service-item.service-item-left,
+.service-item.service-item-right {
+  background: linear-gradient(to right, var(--theme-bg-secondary), var(--theme-bg)) !important;
+}
+
+/* Apply theme to team overlays */
+.team-item .team-body .team-before,
+.team-item .team-body .team-after {
+  background: rgba(0, 0, 0, 0.7) !important;
+}
+
+.light-theme .team-item .team-body .team-before,
+.light-theme .team-item .team-body .team-after {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Fix team overlay text color in light theme */
+.light-theme .team-item .team-body .team-before span,
+.light-theme .team-item .team-body .team-after span,
+.light-theme .team-item .team-body .team-before li,
+.light-theme .team-item .team-body .team-after li {
+  color: #000000 !important;
+}
+
+.team-item .team-name {
+  background: rgba(0, 0, 0, 0.7) !important;
+}
+
+.light-theme .team-item .team-name {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+.light-theme .team-item .team-name h5 {
+  color: #000000 !important;
+}
+
+/* Apply theme to testimonial carousel dots */
+.testimonial-carousel .owl-dots .owl-dot {
+  background: var(--theme-bg-secondary) !important;
+}
+
+/* Apply theme to page header */
+.page-header {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/carousel-1.jpg) top center no-repeat !important;
+  background-size: cover !important;
+}
+
+.light-theme .page-header {
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(../img/carousel-1.jpg) top center no-repeat !important;
+  background-size: cover !important;
+  border-bottom: 3px solid var(--theme-primary) !important;
+}
+
+/* Fix page header text color in light theme */
+.light-theme .page-header h1,
+.light-theme .page-header .breadcrumb-item {
+  color: #000000 !important;
+}
+
+.light-theme .page-header .breadcrumb-item a {
+  color: #2C2C2C !important;
+  text-decoration: none;
+}
+
+.light-theme .page-header .breadcrumb-item a:hover {
+  color: var(--theme-primary) !important;
+}
+
+.light-theme .page-header .breadcrumb-item.active {
+  color: var(--theme-primary) !important;
+}
+
+/* Apply theme to footer */
+.footer {
+  background-color: var(--theme-bg-secondary) !important;
+}
+
+/* Apply theme to all bg-dark elements */
+.bg-dark,
+.list-group-item.bg-dark {
+  background-color: var(--theme-bg-secondary) !important;
+}
+
+/* Apply theme to alert boxes */
+.alert-primary {
+  background-color: var(--theme-primary) !important;
+  border-color: var(--theme-primary) !important;
+  color: var(--theme-text-light) !important;
+}
+
+/* Apply theme to tables */
+.table-dark {
+  background-color: var(--theme-bg-secondary) !important;
+  color: var(--theme-text) !important;
+}
+
+.table-dark th,
+.table-dark td {
+  border-color: var(--theme-border) !important;
+}
+
+.table-primary {
+  background-color: var(--theme-primary) !important;
+}
+
+/* Fix table content in light theme */
+.light-theme .table-dark {
+  background-color: #F5F5F5 !important;
+  color: #2C2C2C !important;
+}
+
+.light-theme .table-dark tbody tr {
+  background-color: #FFFFFF !important;
+}
+
+.light-theme .table-dark tbody tr:hover {
+  background-color: #F5F5F5 !important;
+}
+
+.light-theme .table-dark tbody tr:hover td {
+  color: #2C2C2C !important;
+}
+
+.light-theme .table-dark th,
+.light-theme .table-dark td {
+  background-color: transparent !important;
+  color: #2C2C2C !important;
+  border-color: #DDDDDD !important;
+}
+
+.light-theme .table-primary,
+.light-theme .table-dark thead tr {
+  background-color: var(--theme-primary) !important;
+}
+
+.light-theme .table-primary th,
+.light-theme .table-dark thead th {
+  color: #FFFFFF !important;
+}
+
+/* Fix list-group items in light theme */
+.light-theme .list-group-item.bg-dark {
+  background-color: #FFFFFF !important;
+  color: #2C2C2C !important;
+  border-color: #DDDDDD !important;
+}
+
+.light-theme .list-group-item.bg-dark .text-body {
+  color: #2C2C2C !important;
+}
+
+/* Fix dropdown menu in light theme */
+.light-theme .dropdown-menu {
+  background-color: #FFFFFF !important;
+  border-color: #DDDDDD !important;
+}
+
+.light-theme .dropdown-item {
+  color: #2C2C2C !important;
+}
+
+.light-theme .dropdown-item:hover,
+.light-theme .dropdown-item.active {
+  background-color: var(--theme-primary) !important;
+  color: #FFFFFF !important;
+}
+
 .back-to-top {
   position: fixed;
   display: none;
@@ -150,24 +455,24 @@
   height: 3rem;
 }
 
-/* Giới hạn kích thước ảnh carousel */
+/* Cố định kích thước carousel và ép hình ảnh */
 #header-carousel .carousel-item {
   position: relative;
-  min-height: 500px;
-  height: 500px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  height: 700px;
 }
 
 #header-carousel .carousel-item img {
-  display: none;
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+  object-position: center;
 }
 
 @media (max-width: 768px) {
   #header-carousel .carousel-item {
     position: relative;
-    min-height: 550px;
+    min-height: 450px;
+    height: 450px;
   }
 
   #header-carousel .carousel-item img {
